@@ -43,16 +43,16 @@ function printQuestionMarks(num) {
 // -----------------------------------------------------------------------
 
 var orm = {
-    selectAll: function(table)  {
-        var queryString = "SELECT * FROM ??";
-        connection.query(queryString, [table], 
-            function(err, result)  {
+    selectAll: function(table, cb)  {
+        var queryString = "SELECT * FROM " + table + ";"
+        connection.query(queryString, function(err, result)  {
               if (err) throw err;
               console.log(result);
+              cb(result);
         });
     },
     insertOne: function(table, newBurg)  {
-        var queryString = "INSERT INTO ?? VALUES ??";
+        var queryString = "INSERT INTO" + table + "VALUES ??";
         connection.query(queryString, [table, newBurg],
             function(err, result)  {
               if (err) throw err;
