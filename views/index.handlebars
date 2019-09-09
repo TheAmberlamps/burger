@@ -21,7 +21,7 @@
 </ul>
 
 <h2>Add a burger:</h2>
-<form class="create-form">
+<form class="create-form" action="/api/burgers" method="POST">
 
   <div class="form-group">
     <label for="bu">Burger name:</label>
@@ -30,3 +30,21 @@
 
   <button type="submit">Add burger!</button>
 </form>
+
+<script>
+  $(".create-form").on("submit", function(event)  {
+    event.preventDefault();
+    var newBurg = {
+      name: $("#bu").val().trim(),
+    };
+  $.ajax("/api/burgers", {
+    type: "POST",
+    data: newBurg
+  }).then(
+    function()  {
+      console.log("created new burger");
+      location.reload();
+    }
+  )
+})
+</script>
