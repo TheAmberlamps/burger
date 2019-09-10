@@ -12,7 +12,7 @@ router.get("/", function(req, res) {
       burgers: data
     };
     console.log(hbsObject);
-    console.log("and these burgers are logged from burgers_controller.js");
+    console.log("These burgers are logged from burgers_controller.js");
     res.render("index", hbsObject);
   });
 });

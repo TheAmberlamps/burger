@@ -5,7 +5,10 @@
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-      {{ burger_name }}
+      {{ burger_name }} 
+      	<button class="eat-burg" data-id="{{id}}">
+		      Eat me!
+	      </button>
     {{/unless}}
   {{/each}}
 </ul>
@@ -47,4 +50,24 @@
     }
   )
 })
+
+  $(".eat-burg").on("click", function(event) {
+    var id = $(this).data("id");
+
+    var devouredState = {
+      devoured: 1
+    };
+
+    // Send the PUT request.
+    $.ajax("/api/burgers/" + id, {
+      type: "PUT",
+      data: devouredState
+    }).then(
+      function() {
+        console.log("Devoured a burger with an id of: " + id);
+        // Reload the page to get the updated list
+        location.reload();
+      }
+    );
+  });
 </script>
