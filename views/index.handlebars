@@ -1,5 +1,8 @@
-<h1>Burgers!</h1>
+<h1 id="title">Burger Time!</h1>
 
+<img src="../public/img/cute-burger.png">
+
+<div id=unEaten>
 <h2>Burgers I have yet to eat:</h2>
 
 <ul>
@@ -12,7 +15,9 @@
     {{/unless}}
   {{/each}}
 </ul>
+</div>
 
+<div id="eaten">
 <h2>Burgers that have been devoured:</h2>
 
 <ul>
@@ -22,7 +27,9 @@
     {{/if}}
   {{/each}}
 </ul>
+</div>
 
+<div id="burgAdd">
 <h2>Add a burger:</h2>
 <form class="create-form" action="/api/burgers" method="POST">
 
@@ -33,6 +40,7 @@
 
   <button type="submit">Add burger!</button>
 </form>
+</div>
 
 <script>
   $(".create-form").on("submit", function(event)  {
