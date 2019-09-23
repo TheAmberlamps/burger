@@ -1,33 +1,33 @@
 <h1 id="title">Burger Time!</h1>
+<br>
+<img src="/img/burg.png" alt="Cute burger">
 
-<img src="../public/img/cute-burger.png">
-
-<div id=unEaten>
+<span id="unEaten">
 <h2>Burgers I have yet to eat:</h2>
 
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-      {{ burger_name }} 
+      {{ burger_name }} -
       	<button class="eat-burg" data-id="{{id}}">
 		      Eat me!
 	      </button>
     {{/unless}}
   {{/each}}
 </ul>
-</div>
+</span>
 
-<div id="eaten">
+<span id="eaten">
 <h2>Burgers that have been devoured:</h2>
 
 <ul>
   {{#each burgers}}
     {{#if devoured}}
-      {{ burger_name }}
+      {{ burger_name }},
     {{/if}}
   {{/each}}
 </ul>
-</div>
+</span>
 
 <div id="burgAdd">
 <h2>Add a burger:</h2>
