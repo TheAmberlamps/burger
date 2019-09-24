@@ -3,6 +3,10 @@ body {
   background-size: 25%;
 }
 
+ul {
+  padding-inline-start: 0px;
+}
+
 li {
   padding: 5px;
   margin: 5px;
@@ -29,18 +33,35 @@ li {
   text-align: center;
 }
 
-#uneaten,
-#eaten {
+#uneaten {
   display: inline-block;
+  right: 30px;
   width: 33%;
+  border: 2px solid black;
+  background: white;
+  text-align: center;
+}
+
+#eaten {
+  /* display: inline-block; */
+  width: 33%;
+  border: 2px solid black;
+  background: white;
+  text-align: center;
+  float: right;
 }
 
 #burgAdd {
   position: absolute;
   margin: auto;
-  width: 99%;
+  width: 33%;
+  padding: 5px;
+  border: 2px solid black;
+  background: white;
   text-align: center;
-  bottom: 100px;
+  bottom: 50px;
+  left: 50px;
+  right: 50px;
 }
 
 img {
